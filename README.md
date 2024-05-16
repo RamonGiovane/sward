@@ -7,7 +7,7 @@ See: https://github.com/darrenburns/ward/issues/338
 For this purpose run:
 
 ``
-  ward --hide-locals=true
+  ward --hide-locals
 ``
 
 ### Installation:
