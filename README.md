@@ -18,7 +18,7 @@ It's on TestPypi for now: https://test.pypi.org/project/sward/0.68.0b0/
 ```
 
 
-All credits goes to Darren Burns and the original contributors, I just add the option.
+All credit goes to Darren Burns and the original contributors, I just added the option.
 
 <hr />
 
