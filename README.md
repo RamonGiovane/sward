@@ -1,3 +1,19 @@
+# SWARD
+Silent Ward, a fork which allows you to print less verbose testing output.
+
+See: https://github.com/darrenburns/ward/issues/338
+
+
+For this purpose run:
+
+``
+  ward --hide-locals=true
+``
+
+All credits goes to Darren Burns and the original contributors, I just add the option.
+
+<hr />
+
 <img src="https://user-images.githubusercontent.com/5740731/119056107-085c6900-b9c2-11eb-9699-f54ef4945623.png" width="350px">
 
 [![Codecov](https://codecov.io/gh/darrenburns/ward/branch/master/graph/badge.svg)](https://codecov.io/gh/darrenburns/ward)
