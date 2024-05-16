@@ -10,6 +10,14 @@ For this purpose run:
   ward --hide-locals=true
 ``
 
+### Installation:
+
+It's on TestPypi for now: https://test.pypi.org/project/sward/0.68.0b0/
+```
+  pip install -i https://test.pypi.org/simple/ sward==0.68.0b0
+```
+
+
 All credits goes to Darren Burns and the original contributors, I just add the option.
 
 <hr />
