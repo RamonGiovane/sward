@@ -12,13 +12,10 @@ For this purpose run:
 
 ### Installation:
 
-It's on TestPypi for now: https://test.pypi.org/project/sward/0.68.0b0/
 ```
-  pip install -i https://test.pypi.org/simple/ sward==0.68.0b0
+  pip install sward
 ```
 
-
-All credit goes to Darren Burns and the original contributors, I just added the option.
 
 <hr />
 
