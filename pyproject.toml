@@ -2,12 +2,15 @@
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
+[[tool.poetry.packages]]
+include = "ward"
+
 [tool.ward]
 path = ["tests"]
 exclude = ["tests/resources/"]
 
 [tool.poetry]
-name = "ward"
+name = "sward"
 version = "0.68.0b0"
 description = "A modern Python testing framework"
 exclude = ["tests"]
@@ -16,7 +19,7 @@ maintainers = ["Darren Burns <darrenb900@gmail.com>"]
 license = "MIT"
 readme = "README.md"
 homepage = "https://ward.readthedocs.io"
-repository = "https://github.com/darrenburns/ward"
+repository = "https://github.com/RamonGiovane/sward"
 documentation = "https://ward.readthedocs.io"
 keywords = ["test", "testing", "quality-assurance", "cli", "python3"]
 classifiers = [
