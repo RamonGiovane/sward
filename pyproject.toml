@@ -11,7 +11,7 @@ exclude = ["tests/resources/"]
 
 [tool.poetry]
 name = "sward"
-version = "0.68.0b0"
+version = "0.68.0b1"
 description = "A modern Python testing framework"
 exclude = ["tests"]
 authors = ["Darren Burns <darrenb900@gmail.com>"]
