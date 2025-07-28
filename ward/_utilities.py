@@ -2,7 +2,6 @@ import asyncio
 import collections
 import inspect
 from pathlib import Path
-import sys
 from typing import Any, Callable, Dict, Hashable, Iterable, List, Optional, TypeVar
 
 
@@ -46,14 +45,32 @@ def group_by(items: Iterable[T], key: Callable[[T], H]) -> Dict[H, List[T]]:
         groups[key(item)].append(item)
     return dict(groups)
 
-def get_current_event_loop() -> asyncio.AbstractEventLoop:
-    if sys.version_info < (3, 10):
-        loop = asyncio.get_event_loop()
-    else:
-        try:
-            loop = asyncio.get_running_loop()
-        except RuntimeError:
-            loop = asyncio.new_event_loop()
 
-        asyncio.set_event_loop(loop)
+def get_current_event_loop() -> asyncio.AbstractEventLoop:
+    """
+    Creates a new asyncio event loop and sets it as the current loop.
+    Should only be used when no loop is available or the current loop is closed.
+    """
+    try:
+        return asyncio.get_running_loop()
+    except RuntimeError:
+        try:
+            loop = asyncio.get_event_loop()
+        except RuntimeError:
+            return _create_new_event_loop()
+
+        if not loop.is_closed():
+            return loop
+
+        return _create_new_event_loop()
+
+
+def _create_new_event_loop() -> asyncio.AbstractEventLoop:
+    """
+    Creates a new asyncio event loop and sets it as the current loop.
+    Should be used it with caution, as it may interfere in ASGI apps.
+    Should only be used when absolutely no loop is available or the current loop is closed.
+    """
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
     return loop
