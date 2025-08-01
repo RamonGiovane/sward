@@ -48,8 +48,9 @@ def group_by(items: Iterable[T], key: Callable[[T], H]) -> Dict[H, List[T]]:
 
 def get_current_event_loop() -> asyncio.AbstractEventLoop:
     """
-    Creates a new asyncio event loop and sets it as the current loop.
-    Should only be used when no loop is available or the current loop is closed.
+    Try to get the current asyncio event loop.
+    If no loop is available or the current loop is closed,
+    creates a new asyncio event loop and sets it as the current loop.
     """
     try:
         return asyncio.get_running_loop()
