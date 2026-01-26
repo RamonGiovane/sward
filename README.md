@@ -1,14 +1,20 @@
 # SWARD
-Silent Ward, a fork which allows you to print less verbose testing output.
 
-See: https://github.com/darrenburns/ward/issues/338
+Works just like [**Ward**]( https://github.com/darrenburns/ward), but has some new fixes and features, since the original project was archived.
 
+### New features
 
-For this purpose run:
+- Ability to hide/show traceback locals, hence the name Sward — a silent Ward. 🤫
+    - Just use `ward test --hide-locals` for this purpose.
+    - See: https://github.com/darrenburns/ward/issues/338
 
-``
-  ward --hide-locals
-``
+###  Fixes
+- The traceback panel now uses the full terminal width (no more a small 100px box)
+
+- Breakpoint statements are working again
+
+- Event loop bugs fixed
+
 
 ### Installation:
 
@@ -16,6 +22,7 @@ For this purpose run:
   pip install sward
 ```
 
+From now on, it's the same thing from Ward's original repo...
 
 <hr />
 
