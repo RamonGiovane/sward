@@ -771,6 +771,11 @@ def get_terminal_size() -> TerminalSize:
             return TerminalSize(height=rows, width=cols)
         except OSError:
             continue
+
+    print(
+        "Failed to get terminal size. Using Ward's default terminal size.",
+        dict(height=24, width=80),
+    )
     return TerminalSize(height=24, width=80)
 
 
