@@ -958,8 +958,9 @@ class TestResultWriter(TestResultWriterBase):
             # The first frame contains library internal code which is not
             # relevant to end users, so skip over it.
             trace = trace.tb_next
+            width = int(self.terminal_size.width - self.terminal_size.width * 0.05)
             tb = Traceback.from_exception(
-                err.__class__, err, trace, show_locals=self.show_locals
+                err.__class__, err, trace, show_locals=self.show_locals, width=width
             )
             self.console.print(Padding(tb, pad=(0, 2, 1, 2)))
         else:
